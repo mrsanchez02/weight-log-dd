@@ -1,5 +1,4 @@
 import React from 'react';
-import { differenciaObjetivo } from '../helper';
 
 const Entradas = ({objetivo, registros}) => {
 
