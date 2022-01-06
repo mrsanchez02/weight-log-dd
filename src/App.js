@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Pregunta from './components/Pregunta';
+import Formulario from './components/Formulario';
+import Entradas from './components/Entradas';
 
 function App() {
+
+const [objetivo, setObjetivo] = useState(0);
+const [registros, setRegistros] = useState([]);
+
+const agregarNuevo = (registro) => {
+  setRegistros([...registros,registro])
+}
+console.log(objetivo);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container mt-5'>
+      {objetivo===0? 
+        <Pregunta 
+          setObjetivo={setObjetivo}
+        /> : 
+        <>
+          <Formulario 
+            agregarNuevo={agregarNuevo}
+            objetivo={objetivo}
+          />
+          <hr/>
+          <Entradas 
+            registros={registros}
+          />
+        </>
+      }
     </div>
   );
 }
