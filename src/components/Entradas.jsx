@@ -7,7 +7,7 @@ const Entradas = ({objetivo, registros}) => {
 
     return (
         <>
-            <h2 className='text-center'>Registros</h2>
+            <h2 className='text-center'>Historial</h2>
             <br />
             <ul className="list-group">
                 {   

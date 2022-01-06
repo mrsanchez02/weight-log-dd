@@ -24,10 +24,14 @@ const agregarNuevo = (registro) => {
             objetivo={objetivo}
           />
           <hr/>
+          {
+            registros.length ? 
           <Entradas 
             registros={registros}
             objetivo={objetivo}
           />
+          :null
+          }
         </>
       }
     </div>
