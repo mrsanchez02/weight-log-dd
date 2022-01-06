@@ -27,6 +27,7 @@ console.log(objetivo);
           <hr/>
           <Entradas 
             registros={registros}
+            objetivo={objetivo}
           />
         </>
       }

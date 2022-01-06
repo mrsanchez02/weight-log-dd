@@ -10,7 +10,9 @@ const Entradas = ({objetivo, registros}) => {
             <br />
             <ul className="list-group">
                 {   
-                    registros.map(registro=>(
+                    registros.map(registro=>{
+                        let clase = registro.peso>=objetivo ?'badge bg-primary':'badge bg-danger';
+                        return (
                         <li 
                             key={registro.id}
                             className="list-group-item">
@@ -21,10 +23,10 @@ const Entradas = ({objetivo, registros}) => {
                         </div>
                         <div className="d-flex">
                             <div className="p-2 flex-grow-1" >{registro.fecha}</div>                            
-                            <div className="p-2">Estas a <span className='badge bg-primary'>{registro.diff}</span> libras de tu peso objetivo.</div>
+                            <div className="p-2">Estas a <span className={clase}>{registro.diff}</span> libras de tu peso objetivo.</div>
                         </div>
                         </li>
-                    ))
+                    )})
                 }
             </ul>
         </>
