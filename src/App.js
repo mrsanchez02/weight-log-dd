@@ -11,7 +11,6 @@ const [registros, setRegistros] = useState([]);
 const agregarNuevo = (registro) => {
   setRegistros([...registros,registro])
 }
-console.log(objetivo);
 
   return (
     <div className='container mt-5'>

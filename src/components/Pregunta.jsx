@@ -38,11 +38,11 @@ const Pregunta = ({setObjetivo}) => {
                     type="number" 
                     id='floatingInput' 
                     className="form-control" 
-                    placeholder="Ingrese su peso objetivo" 
+                    placeholder="Ingrese su peso objetivo en libras..." 
                     onChange={handleChange}
                     required
                 />
-                <label htmlFor="floatingInput">Ingrese su peso objetivo</label>
+                <label htmlFor="floatingInput">Ingrese su peso objetivo en libras...</label>
                 <button 
                     className="btn btn-primary" 
                     type="submit" 

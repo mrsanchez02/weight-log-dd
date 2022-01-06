@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import shortid from 'shortid';
-import {differenciaObjetivo} from '../helper';
+import {differenciaObjetivo,validarFecha} from '../helper';
 
 const Formulario = ({ agregarNuevo,objetivo }) => {
 
@@ -22,8 +22,13 @@ const Formulario = ({ agregarNuevo,objetivo }) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-
         // Validando inputs.
+
+        if(validarFecha(fecha)){
+            setError(true);
+            return
+        }
+
         if (peso === 0 || fecha.trim() === '' || isNaN(peso)) {
             setError(true);
             setTimeout(() => {
@@ -52,7 +57,7 @@ const Formulario = ({ agregarNuevo,objetivo }) => {
     return (
         <>
             {error ?
-                <div class="alert alert-danger" role="alert">
+                <div className="alert alert-danger" role="alert">
                     Por favor ingrese un peso objetivo válido!
                 </div>
                 : null}
@@ -63,13 +68,12 @@ const Formulario = ({ agregarNuevo,objetivo }) => {
                         type="number"
                         id='floatingPesoActual'
                         className="form-control"
-                        placeholder="Ingrese su peso actual"
                         onChange={handleChange}
                         value={peso}
                         name="peso"
                         required
                     />
-                    <label htmlFor="floatingPesoActual">Ingrese su peso actual</label>
+                    <label htmlFor="floatingPesoActual">Ingrese el peso a registrar</label>
                     <input
                         type="date"
                         id='fechaActual'
