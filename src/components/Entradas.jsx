@@ -1,9 +1,7 @@
 import React from 'react';
 import {mostrarFecha} from '../helper';
 
-const Entradas = ({objetivo, registros}) => {
-
-    // const diferencia = differenciaObjetivo(objetivo,registros);
+const Entradas = ({objetivo, registros,limpiarHistorial,reiniciarTodo}) => {
 
     return (
         <>
@@ -31,6 +29,16 @@ const Entradas = ({objetivo, registros}) => {
                     )})
                 }
             </ul>
+            <div className="mt-5 btn-group d-flex">
+            <button
+                className='btn btn-outline-danger form-control'
+                onClick={limpiarHistorial}
+                > <i className="bi bi-recycle"></i>Limpiar historial</button>
+            <button
+                className='btn btn-danger form-control'
+                onClick={reiniciarTodo}
+                > <i className="bi bi-recycle"></i>Reiniciar objetivo</button>
+            </div>
         </>
     )
 }

@@ -96,8 +96,9 @@ const Formulario = ({ agregarNuevo,objetivo }) => {
                         className="btn btn-outline-primary form-control my-2"
                         type="submit"
                         id="button-addon1"
-                    >Agregar!</button>
+                    ><i className="bi bi-plus-circle"></i> Agregar!</button>
             </form>
+            
         </>
     )
 }
